@@ -1,0 +1,12 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "NAT_BACKEND_URL",
+      "description": "Full URL of the NeMo Agent Toolkit backend API (e.g. http://your-server:8000)",
+      "requiredAtBoot": false
+    }
+  ]
+}
