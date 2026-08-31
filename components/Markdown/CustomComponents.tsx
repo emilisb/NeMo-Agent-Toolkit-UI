@@ -29,7 +29,7 @@ export const getReactMarkDownCustomComponents = (
         if (isInline) {
           return (
             <code
-              className="bg-gray-200 dark:bg-gray-800 text-[#76b900] px-1 py-0.5 rounded before:content-none after:content-none"
+              className="bg-gray-200 dark:bg-gray-800 text-[#f97316] px-1 py-0.5 rounded before:content-none after:content-none"
               {...props}
             >
               {children}
@@ -99,7 +99,7 @@ export const getReactMarkDownCustomComponents = (
         return (
           <a
             href={href}
-            className="text-[#76b900] no-underline hover:underline"
+            className="text-[#f97316] no-underline hover:underline"
             target="_blank"
             rel="noopener noreferrer"
             {...props}
@@ -150,7 +150,7 @@ export const getReactMarkDownCustomComponents = (
           : null;
         return validContent ? (
           <sup
-            className="text-xs bg-gray-100 text-[#76b900] border border-[#e7ece0] px-1 py-0.5 rounded-md shadow-sm"
+            className="text-xs bg-gray-100 text-[#f97316] border border-[#fed7aa] px-1 py-0.5 rounded-md shadow-sm"
             style={{
               fontWeight: 'bold',
               marginLeft: '2px',

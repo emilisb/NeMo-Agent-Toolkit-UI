@@ -424,7 +424,7 @@ export const ChatInput = ({
           />
           {inputFile && inputFileContent && (
             <div>
-              <div className="relative right-0 top-0 p-1 bg-[#91c438] dark:bg-green-700 text-black dark:text-white flex items-center justify-start gap-2 rounded-small">
+              <div className="relative right-0 top-0 p-1 bg-[#f97316] dark:bg-orange-700 text-black dark:text-white flex items-center justify-start gap-2 rounded-small">
                 <IconPhoto className="ml-8" size={16} />
                 <span>{inputFile}</span>
                 <IconTrash
@@ -438,7 +438,7 @@ export const ChatInput = ({
           {appConfig?.fileUploadEnabled && !inputFile && (
             <>
               <button
-                className="absolute right-10 top-2 rounded-sm p-1 text-neutral-800 opacity-60 hover:text-[#76b900] dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200"
+                className="absolute right-10 top-2 rounded-sm p-1 text-neutral-800 opacity-60 hover:text-[#f97316] dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200"
                 onClick={triggerFileUpload}
               >
                 {messageIsStreaming ? (
@@ -462,7 +462,7 @@ export const ChatInput = ({
             className={`absolute left-2 top-2 rounded-sm p-[5px] text-neutral-800 opacity-60 dark:bg-opacity-50 dark:text-neutral-100 ${
               messageIsStreaming
                 ? 'text-neutral-400' // Disable hover and change color when streaming
-                : 'hover:text-[#76b900] dark:hover:text-neutral-200' // Normal hover effect
+                : 'hover:text-[#f97316] dark:hover:text-neutral-200' // Normal hover effect
             }`}
             disabled={messageIsStreaming}
           >

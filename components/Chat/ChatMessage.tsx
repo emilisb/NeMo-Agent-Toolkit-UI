@@ -298,7 +298,7 @@ export const ChatMessage: FC<Props> = memo(
 
                     <div className="mt-10 flex justify-center space-x-4">
                       <button
-                        className="h-[40px] rounded-md border border-neutral-300 px-4 py-1 text-sm font-medium text-neutral-700 enabled:hover:bg-[#76b900] disabled:opacity-50"
+                        className="h-[40px] rounded-md border border-neutral-300 px-4 py-1 text-sm font-medium text-neutral-700 enabled:hover:bg-[#f97316] disabled:opacity-50"
                         onClick={handleEditMessage}
                         disabled={messageContent.trim().length <= 0}
                       >
@@ -418,12 +418,12 @@ export const ChatMessage: FC<Props> = memo(
                         {messagedCopied ? (
                           <IconCheck
                             size={20}
-                            className="text-[#76b900] dark:text-[#76b900]"
+                            className="text-[#f97316] dark:text-[#f97316]"
                             id={message?.id}
                           />
                         ) : (
                           <button
-                            className="text-[#76b900] hover:text-gray-700 dark:text-[#76b900] dark:hover:round-gray-300"
+                            className="text-[#f97316] hover:text-gray-700 dark:text-[#f97316] dark:hover:round-gray-300"
                             onClick={copyOnClick}
                             title="Copy to clipboard"
                             id={message?.id}
@@ -432,7 +432,7 @@ export const ChatMessage: FC<Props> = memo(
                           </button>
                         )}
                         <button
-                          className="text-[#76b900] hover:text-gray-700 dark:text-[#76b900] dark:hover:text-gray-300"
+                          className="text-[#f97316] hover:text-gray-700 dark:text-[#f97316] dark:hover:text-gray-300"
                           onClick={handleTextToSpeech}
                           aria-label={
                             isPlaying ? 'Stop speaking' : 'Start speaking'
@@ -451,7 +451,7 @@ export const ChatMessage: FC<Props> = memo(
                           <>
                             <button
                               className={
-                                'text-[#76b900] hover:text-gray-700 dark:text-[#76b900] dark:hover:text-gray-300'
+                                'text-[#f97316] hover:text-gray-700 dark:text-[#f97316] dark:hover:text-gray-300'
                               }
                               onClick={() =>
                                 submitFeedback(
@@ -465,7 +465,7 @@ export const ChatMessage: FC<Props> = memo(
                             </button>
                             <button
                               className={
-                                'text-[#76b900] hover:text-gray-700 dark:text-[#76b900] dark:hover:text-gray-300'
+                                'text-[#f97316] hover:text-gray-700 dark:text-[#f97316] dark:hover:text-gray-300'
                               }
                               onClick={() => {
                                 submitFeedback(
@@ -480,7 +480,7 @@ export const ChatMessage: FC<Props> = memo(
                             </button>
                             <button
                               className={
-                                'text-[#76b900] hover:text-gray-700 dark:text-[#76b900] dark:hover:text-gray-300'
+                                'text-[#f97316] hover:text-gray-700 dark:text-[#f97316] dark:hover:text-gray-300'
                               }
                               onClick={() =>
                                 setShowFeedbackInput(!showFeedbackInput)
@@ -509,7 +509,7 @@ export const ChatMessage: FC<Props> = memo(
                       />
                       <div className="flex gap-2">
                         <button
-                          className="h-[40px] rounded-md border border-neutral-300 px-4 py-1 text-sm font-medium text-neutral-700 enabled:hover:bg-[#76b900] disabled:opacity-50"
+                          className="h-[40px] rounded-md border border-neutral-300 px-4 py-1 text-sm font-medium text-neutral-700 enabled:hover:bg-[#f97316] disabled:opacity-50"
                           onClick={handleSubmitFeedbackComment}
                           disabled={!feedbackComment.trim()}
                         >

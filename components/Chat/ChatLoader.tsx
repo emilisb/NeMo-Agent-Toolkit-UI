@@ -44,7 +44,7 @@ export const ChatLoader: FC<Props> = ({ statusUpdateText = '' }) => {
           {/* Status Update Text with Green Blinking Caret */}
           <span className="cursor-default">
             {currentMessage}
-            <span className="text-[#76b900] animate-blink">▍</span>
+            <span className="text-[#f97316] animate-blink">▍</span>
           </span>
         </div>
       </div>
