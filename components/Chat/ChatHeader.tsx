@@ -19,6 +19,7 @@ import HomeContext from '@/pages/api/home/home.context';
 import { useTheme } from '@/contexts/ThemeContext';
 
 import { DataStreamControls } from './DataStreamControls';
+import { BrainWaveAnimation } from './BrainWaveAnimation';
 
 interface Props {
   webSocketModeRef?: React.MutableRefObject<boolean>;
@@ -101,6 +102,7 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
         </div>
       ) : (
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto flex flex-col space-y-5 md:space-y-10 px-3 pt-5 md:pt-12 sm:max-w-[600px] text-center">
+          <BrainWaveAnimation />
           <div className="text-3xl font-semibold text-gray-800 dark:text-white">
             {env('NEXT_PUBLIC_NAT_GREETING_TITLE') ||
               process?.env?.NEXT_PUBLIC_NAT_GREETING_TITLE ||
