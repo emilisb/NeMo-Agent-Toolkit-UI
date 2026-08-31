@@ -101,12 +101,76 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
         </div>
       ) : (
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto flex flex-col space-y-5 md:space-y-10 px-3 pt-5 md:pt-12 sm:max-w-[600px] text-center">
-          <div className="text-3xl font-semibold text-gray-800 dark:text-white">
-            {env('NEXT_PUBLIC_NAT_GREETING_TITLE') ||
-              process?.env?.NEXT_PUBLIC_NAT_GREETING_TITLE ||
-              `Hi, I'm ${workflow}`}
+          <style>{`
+            @keyframes floatOrb {
+              0%, 100% { transform: translateY(0px) scale(1); opacity: 0.6; }
+              50% { transform: translateY(-18px) scale(1.08); opacity: 1; }
+            }
+            @keyframes floatOrb2 {
+              0%, 100% { transform: translateY(0px) scale(1); opacity: 0.5; }
+              50% { transform: translateY(14px) scale(0.92); opacity: 0.9; }
+            }
+            @keyframes floatOrb3 {
+              0%, 100% { transform: translateY(0px) scale(1); opacity: 0.4; }
+              33% { transform: translateY(-10px) scale(1.05); opacity: 0.8; }
+              66% { transform: translateY(8px) scale(0.95); opacity: 0.6; }
+            }
+            @keyframes fadeSlideUp {
+              from { opacity: 0; transform: translateY(24px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeSlideUp2 {
+              from { opacity: 0; transform: translateY(16px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes shimmer {
+              0% { background-position: -200% center; }
+              100% { background-position: 200% center; }
+            }
+            .greeting-title {
+              animation: fadeSlideUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
+            }
+            .greeting-subtitle {
+              animation: fadeSlideUp2 0.7s cubic-bezier(0.22,1,0.36,1) 0.18s both;
+            }
+            .greeting-shimmer {
+              background: linear-gradient(90deg, #76b900 0%, #b8ff00 40%, #76b900 60%, #4a8a00 100%);
+              background-size: 200% auto;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              animation: shimmer 3.5s linear infinite;
+            }
+            .dark .greeting-shimmer {
+              background: linear-gradient(90deg, #76b900 0%, #d4ff00 40%, #76b900 60%, #a0e000 100%);
+              background-size: 200% auto;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              animation: shimmer 3.5s linear infinite;
+            }
+            .orb1 { animation: floatOrb 4s ease-in-out infinite; }
+            .orb2 { animation: floatOrb2 5.5s ease-in-out infinite; }
+            .orb3 { animation: floatOrb3 6.5s ease-in-out infinite; }
+          `}</style>
+
+          {/* Floating orbs animation above the title */}
+          <div className="relative flex justify-center items-end gap-4 h-14 pointer-events-none select-none">
+            <div className="orb1 w-8 h-8 rounded-full bg-[#76b900] opacity-60 blur-sm" style={{ marginBottom: '4px' }} />
+            <div className="orb2 w-12 h-12 rounded-full bg-[#76b900] opacity-50 blur-md" style={{ marginBottom: '0px' }} />
+            <div className="orb3 w-6 h-6 rounded-full bg-[#a0e000] opacity-70 blur-sm" style={{ marginBottom: '8px' }} />
+            <div className="orb1 w-5 h-5 rounded-full bg-[#76b900] opacity-40 blur-sm" style={{ marginBottom: '12px', animationDelay: '1s' }} />
+            <div className="orb2 w-9 h-9 rounded-full bg-[#5a9900] opacity-55 blur-md" style={{ marginBottom: '2px', animationDelay: '0.7s' }} />
           </div>
-          <div className="text-lg text-gray-600 dark:text-gray-400">
+
+          <div className="greeting-title text-3xl font-semibold">
+            <span className="greeting-shimmer">
+              {env('NEXT_PUBLIC_NAT_GREETING_TITLE') ||
+                process?.env?.NEXT_PUBLIC_NAT_GREETING_TITLE ||
+                `Hi, I'm ${workflow}`}
+            </span>
+          </div>
+          <div className="greeting-subtitle text-lg text-gray-600 dark:text-gray-400">
             {env('NEXT_PUBLIC_NAT_GREETING_SUBTITLE') ||
               process?.env?.NEXT_PUBLIC_NAT_GREETING_SUBTITLE ||
               'How can I assist you today?'}
