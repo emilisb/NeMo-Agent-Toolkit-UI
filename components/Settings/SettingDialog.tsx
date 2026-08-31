@@ -50,7 +50,7 @@ export const SettingDialog: FC<Props> = ({ open, onClose }) => {
     dispatch: homeDispatch,
   } = useContext(HomeContext);
 
-  const [theme, setTheme] = useState<'light' | 'dark'>(themeLightMode);
+  const [theme, setTheme] = useState<'light' | 'dark' | 'base44'>(themeLightMode as 'light' | 'dark' | 'base44');
   const [selectedHttpEndpoint, setSelectedHttpEndpoint] = useState(
     sessionStorage.getItem('httpEndpoint') ||
       httpEndpoint ||
@@ -243,6 +243,7 @@ export const SettingDialog: FC<Props> = ({ open, onClose }) => {
         >
           <option value="dark">{t('Dark mode')}</option>
           <option value="light">{t('Light mode')}</option>
+          <option value="base44">{t('Base44')}</option>
         </select>
 
         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mt-4">
