@@ -479,7 +479,7 @@ describe('InteractionModal and Human-in-the-Loop Functionality', () => {
       const continueButton = screen.getByRole('button', { name: 'Continue' });
       const stopButton = screen.getByRole('button', { name: 'Stop' });
 
-      expect(continueButton).toHaveClass('bg-[#76b900]');
+      expect(continueButton).toHaveClass('bg-[#f97316]');
       expect(stopButton).toHaveClass('bg-slate-800');
     });
   });

@@ -90,7 +90,7 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
     <div
       className={`top-0 z-10 flex justify-center items-center h-12 ${selectedConversation?.messages?.length === 0
           ? 'bg-none'
-          : 'bg-[#76b900] sticky'
+          : 'bg-[#f97316] sticky'
         }  py-2 px-4 text-sm text-white dark:border-none dark:bg-black dark:text-neutral-200`}
     >
       {selectedConversation?.messages?.length > 0 ? (
@@ -134,7 +134,7 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
               animation: fadeSlideUp2 0.7s cubic-bezier(0.22,1,0.36,1) 0.18s both;
             }
             .greeting-shimmer {
-              background: linear-gradient(90deg, #76b900 0%, #b8ff00 40%, #76b900 60%, #4a8a00 100%);
+              background: linear-gradient(90deg, #f97316 0%, #fbbf24 40%, #f97316 60%, #ea580c 100%);
               background-size: 200% auto;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
@@ -142,7 +142,7 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
               animation: shimmer 3.5s linear infinite;
             }
             .dark .greeting-shimmer {
-              background: linear-gradient(90deg, #76b900 0%, #d4ff00 40%, #76b900 60%, #a0e000 100%);
+              background: linear-gradient(90deg, #f97316 0%, #fbbf24 40%, #f97316 60%, #fb923c 100%);
               background-size: 200% auto;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
@@ -156,11 +156,11 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
 
           {/* Floating orbs animation above the title */}
           <div className="relative flex justify-center items-end gap-4 h-14 pointer-events-none select-none">
-            <div className="orb1 w-8 h-8 rounded-full bg-[#76b900] opacity-60 blur-sm" style={{ marginBottom: '4px' }} />
-            <div className="orb2 w-12 h-12 rounded-full bg-[#76b900] opacity-50 blur-md" style={{ marginBottom: '0px' }} />
-            <div className="orb3 w-6 h-6 rounded-full bg-[#a0e000] opacity-70 blur-sm" style={{ marginBottom: '8px' }} />
-            <div className="orb1 w-5 h-5 rounded-full bg-[#76b900] opacity-40 blur-sm" style={{ marginBottom: '12px', animationDelay: '1s' }} />
-            <div className="orb2 w-9 h-9 rounded-full bg-[#5a9900] opacity-55 blur-md" style={{ marginBottom: '2px', animationDelay: '0.7s' }} />
+            <div className="orb1 w-8 h-8 rounded-full bg-[#f97316] opacity-60 blur-sm" style={{ marginBottom: '4px' }} />
+            <div className="orb2 w-12 h-12 rounded-full bg-[#f97316] opacity-50 blur-md" style={{ marginBottom: '0px' }} />
+            <div className="orb3 w-6 h-6 rounded-full bg-[#fb923c] opacity-70 blur-sm" style={{ marginBottom: '8px' }} />
+            <div className="orb1 w-5 h-5 rounded-full bg-[#f97316] opacity-40 blur-sm" style={{ marginBottom: '12px', animationDelay: '1s' }} />
+            <div className="orb2 w-9 h-9 rounded-full bg-[#c2410c] opacity-55 blur-md" style={{ marginBottom: '2px', animationDelay: '0.7s' }} />
           </div>
 
           <div className="greeting-title text-3xl font-semibold">
@@ -188,7 +188,7 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
         className={`fixed right-0 top-0 h-12 flex items-center transition-all duration-300 ${isExpanded ? 'mr-2' : 'mr-2'
           } ${selectedConversation?.messages?.length === 0
             ? 'bg-none'
-            : 'bg-[#76b900] dark:bg-black'
+            : 'bg-[#f97316] dark:bg-black'
           }`}
       >
         <button

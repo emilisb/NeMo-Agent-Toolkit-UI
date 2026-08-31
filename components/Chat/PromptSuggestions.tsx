@@ -116,7 +116,7 @@ export const PromptSuggestions = ({
         className={`absolute left-10 top-2 rounded-sm p-[5px] text-neutral-800 opacity-60 dark:bg-opacity-50 dark:text-neutral-100 ${
           messageIsStreaming
             ? 'text-neutral-400'
-            : 'hover:text-[#76b900] dark:hover:text-neutral-200'
+            : 'hover:text-[#f97316] dark:hover:text-neutral-200'
         }`}
         disabled={messageIsStreaming}
       >
@@ -137,7 +137,7 @@ export const PromptSuggestions = ({
                 onClick={() => setPath([])}
                 className={`font-bold ${
                   path.length > 0
-                    ? 'text-[#76b900] hover:text-[#5a8f00] dark:hover:text-[#8fcf00]'
+                    ? 'text-[#f97316] hover:text-[#ea580c] dark:hover:text-[#fb923c]'
                     : 'text-neutral-800 dark:text-neutral-100 cursor-default'
                 }`}
               >
@@ -154,7 +154,7 @@ export const PromptSuggestions = ({
                   {i < path.length - 1 ? (
                     <button
                       onClick={() => setPath(path.slice(0, i + 1))}
-                      className="font-semibold text-[#76b900] hover:text-[#5a8f00] dark:hover:text-[#8fcf00]"
+                      className="font-semibold text-[#f97316] hover:text-[#ea580c] dark:hover:text-[#fb923c]"
                     >
                       {segment}
                     </button>

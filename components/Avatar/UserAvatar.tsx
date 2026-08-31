@@ -21,7 +21,7 @@ export const UserAvatar = ({ src = '', height = 30, width = 30 }) => {
       width={width}
       height={height}
       title={'user-avatar'}
-      className="rounded-full max-w-full h-auto border border-[#76b900]"
+      className="rounded-full max-w-full h-auto border border-[#f97316]"
       onError={onError}
     />
   );

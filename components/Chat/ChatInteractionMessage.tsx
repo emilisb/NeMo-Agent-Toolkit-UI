@@ -142,7 +142,7 @@ export const InteractionModal = ({
           className={`flex gap-2 items-center justify-evenly bg-white text-slate-800 dark:bg-slate-800 dark:text-slate-100 px-4 py-2 rounded-lg shadow-md ${t.visible ? 'animate-fade-in' : 'animate-fade-out'
             }`}
         >
-          <IconInfoCircle size={16} className="text-[#76b900]" />
+          <IconInfoCircle size={16} className="text-[#f97316]" />
           <span>
             {content?.text || 'No content found for this notification'}
           </span>
@@ -193,7 +193,7 @@ export const InteractionModal = ({
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
             <div className="flex justify-end mt-4">
               <button
-                className="px-4 py-2 bg-[#76b900] text-white rounded disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-[#f97316] text-white rounded disabled:bg-gray-400 disabled:cursor-not-allowed"
                 onClick={handleTextSubmit}
                 disabled={isTimedOut}
               >
@@ -210,7 +210,7 @@ export const InteractionModal = ({
                 <button
                   key={option.id}
                   className={`px-4 py-2 ${option?.value?.includes('continue')
-                      ? 'bg-[#76b900]'
+                      ? 'bg-[#f97316]'
                       : 'bg-slate-800'
                     } text-white rounded disabled:bg-gray-400 disabled:cursor-not-allowed`}
                   onClick={() => handleChoiceSubmit(option.value)}
@@ -235,7 +235,7 @@ export const InteractionModal = ({
                     value={option.value}
                     checked={userInput === option.value}
                     onChange={() => setUserInput(option.value)}
-                    className="mr-2 text-[#76b900] focus:ring-[#76b900] disabled:cursor-not-allowed"
+                    className="mr-2 text-[#f97316] focus:ring-[#f97316] disabled:cursor-not-allowed"
                     disabled={isTimedOut}
                   />
                   <label htmlFor={option.id} className="flex flex-col">
@@ -249,7 +249,7 @@ export const InteractionModal = ({
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
             <div className="flex justify-end mt-4">
               <button
-                className="px-4 py-2 bg-[#76b900] text-white rounded disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-[#f97316] text-white rounded disabled:bg-gray-400 disabled:cursor-not-allowed"
                 onClick={handleRadioSubmit}
                 disabled={isTimedOut}
               >
