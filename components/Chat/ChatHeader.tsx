@@ -90,8 +90,8 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
     <div
       className={`top-0 z-10 flex justify-center items-center h-12 ${selectedConversation?.messages?.length === 0
           ? 'bg-none'
-          : 'bg-[#f97316] sticky'
-        }  py-2 px-4 text-sm text-white dark:border-none dark:bg-orange-950 dark:text-neutral-200`}
+          : 'bg-[#76b900] sticky'
+        }  py-2 px-4 text-sm text-white dark:border-none dark:bg-black dark:text-neutral-200`}
     >
       {selectedConversation?.messages?.length > 0 ? (
         <div
@@ -124,7 +124,7 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
         className={`fixed right-0 top-0 h-12 flex items-center transition-all duration-300 ${isExpanded ? 'mr-2' : 'mr-2'
           } ${selectedConversation?.messages?.length === 0
             ? 'bg-none'
-            : 'bg-[#f97316] dark:bg-orange-950'
+            : 'bg-[#76b900] dark:bg-black'
           }`}
       >
         <button
@@ -157,7 +157,7 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
                     value: !chatHistory,
                   });
                 }}
-                className={`relative inline-flex h-5 w-10 items-center cursor-pointer rounded-full transition-colors duration-300 ease-in-out ${chatHistory ? 'bg-black dark:bg-[#f97316]' : 'bg-gray-200'
+                className={`relative inline-flex h-5 w-10 items-center cursor-pointer rounded-full transition-colors duration-300 ease-in-out ${chatHistory ? 'bg-black dark:bg-[#76b900]' : 'bg-gray-200'
                   }`}
               >
                 <span
@@ -197,7 +197,7 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
                     value: newWebSocketMode,
                   });
                 }}
-                className={`relative inline-flex h-5 w-10 items-center cursor-pointer rounded-full transition-colors duration-300 ease-in-out ${webSocketMode ? 'bg-black dark:bg-[#f97316]' : 'bg-gray-200'
+                className={`relative inline-flex h-5 w-10 items-center cursor-pointer rounded-full transition-colors duration-300 ease-in-out ${webSocketMode ? 'bg-black dark:bg-[#76b900]' : 'bg-gray-200'
                   }`}
               >
                 <span

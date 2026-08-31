@@ -33,7 +33,7 @@ export const ChatLoader: FC<Props> = ({ statusUpdateText = '' }) => {
 
   return (
     <div
-      className="group border-b border-black/10 bg-gray-50 text-gray-800 dark:border-gray-900/50 dark:bg-[#c2410c] dark:text-gray-100"
+      className="group border-b border-black/10 bg-gray-50 text-gray-800 dark:border-gray-900/50 dark:bg-[#444654] dark:text-gray-100"
       style={{ overflowWrap: 'anywhere' }}
     >
       <div className="relative m-auto flex p-4 text-base sm:w-[95%] md:w-[92%] lg:w-[93%] 2xl:w-[59%] md:gap-6 md:py-6 lg:px-0">
@@ -44,7 +44,7 @@ export const ChatLoader: FC<Props> = ({ statusUpdateText = '' }) => {
           {/* Status Update Text with Green Blinking Caret */}
           <span className="cursor-default">
             {currentMessage}
-            <span className="text-[#f97316] animate-blink">▍</span>
+            <span className="text-[#76b900] animate-blink">▍</span>
           </span>
         </div>
       </div>

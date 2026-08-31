@@ -259,8 +259,8 @@ export const ChatMessage: FC<Props> = memo(
     return (
       <div
         className={`group md:px-4 ${message.role === 'assistant'
-            ? 'border-b border-black/10 bg-gray-50 text-gray-800 dark:border-gray-900/50 dark:bg-[#c2410c] dark:text-gray-100'
-            : 'border-b border-black/10 bg-white text-gray-800 dark:border-gray-900/50 dark:bg-[#9a3412] dark:text-gray-100'
+            ? 'border-b border-black/10 bg-gray-50 text-gray-800 dark:border-gray-900/50 dark:bg-[#444654] dark:text-gray-100'
+            : 'border-b border-black/10 bg-white text-gray-800 dark:border-gray-900/50 dark:bg-[#343541] dark:text-gray-100'
           }`}
         style={{ overflowWrap: 'anywhere' }}
       >
@@ -280,7 +280,7 @@ export const ChatMessage: FC<Props> = memo(
                   <div className="flex w-full flex-col">
                     <textarea
                       ref={textareaRef}
-                      className="w-full resize-none whitespace-pre-wrap border-none dark:bg-[#9a3412]"
+                      className="w-full resize-none whitespace-pre-wrap border-none dark:bg-[#343541]"
                       value={messageContent}
                       onChange={handleInputChange}
                       onKeyDown={handlePressEnter}
@@ -298,7 +298,7 @@ export const ChatMessage: FC<Props> = memo(
 
                     <div className="mt-10 flex justify-center space-x-4">
                       <button
-                        className="h-[40px] rounded-md border border-neutral-300 px-4 py-1 text-sm font-medium text-neutral-700 enabled:hover:bg-[#f97316] disabled:opacity-50"
+                        className="h-[40px] rounded-md border border-neutral-300 px-4 py-1 text-sm font-medium text-neutral-700 enabled:hover:bg-[#76b900] disabled:opacity-50"
                         onClick={handleEditMessage}
                         disabled={messageContent.trim().length <= 0}
                       >
@@ -418,12 +418,12 @@ export const ChatMessage: FC<Props> = memo(
                         {messagedCopied ? (
                           <IconCheck
                             size={20}
-                            className="text-[#f97316] dark:text-[#f97316]"
+                            className="text-[#76b900] dark:text-[#76b900]"
                             id={message?.id}
                           />
                         ) : (
                           <button
-                            className="text-[#f97316] hover:text-gray-700 dark:text-[#f97316] dark:hover:round-gray-300"
+                            className="text-[#76b900] hover:text-gray-700 dark:text-[#76b900] dark:hover:round-gray-300"
                             onClick={copyOnClick}
                             title="Copy to clipboard"
                             id={message?.id}
@@ -432,7 +432,7 @@ export const ChatMessage: FC<Props> = memo(
                           </button>
                         )}
                         <button
-                          className="text-[#f97316] hover:text-gray-700 dark:text-[#f97316] dark:hover:text-gray-300"
+                          className="text-[#76b900] hover:text-gray-700 dark:text-[#76b900] dark:hover:text-gray-300"
                           onClick={handleTextToSpeech}
                           aria-label={
                             isPlaying ? 'Stop speaking' : 'Start speaking'
@@ -451,7 +451,7 @@ export const ChatMessage: FC<Props> = memo(
                           <>
                             <button
                               className={
-                                'text-[#f97316] hover:text-gray-700 dark:text-[#f97316] dark:hover:text-gray-300'
+                                'text-[#76b900] hover:text-gray-700 dark:text-[#76b900] dark:hover:text-gray-300'
                               }
                               onClick={() =>
                                 submitFeedback(
@@ -465,7 +465,7 @@ export const ChatMessage: FC<Props> = memo(
                             </button>
                             <button
                               className={
-                                'text-[#f97316] hover:text-gray-700 dark:text-[#f97316] dark:hover:text-gray-300'
+                                'text-[#76b900] hover:text-gray-700 dark:text-[#76b900] dark:hover:text-gray-300'
                               }
                               onClick={() => {
                                 submitFeedback(
@@ -480,7 +480,7 @@ export const ChatMessage: FC<Props> = memo(
                             </button>
                             <button
                               className={
-                                'text-[#f97316] hover:text-gray-700 dark:text-[#f97316] dark:hover:text-gray-300'
+                                'text-[#76b900] hover:text-gray-700 dark:text-[#76b900] dark:hover:text-gray-300'
                               }
                               onClick={() =>
                                 setShowFeedbackInput(!showFeedbackInput)
@@ -501,7 +501,7 @@ export const ChatMessage: FC<Props> = memo(
                   {showFeedbackInput && message.observabilityTraceId && (
                     <div className="mt-2 flex flex-col gap-2">
                       <textarea
-                        className="w-full resize-none rounded-md border border-neutral-300 bg-white p-2 text-sm text-gray-800 dark:border-neutral-700 dark:bg-[#c2410c] dark:text-gray-100"
+                        className="w-full resize-none rounded-md border border-neutral-300 bg-white p-2 text-sm text-gray-800 dark:border-neutral-700 dark:bg-[#444654] dark:text-gray-100"
                         placeholder="Please tell us what you think about this response..."
                         value={feedbackComment}
                         onChange={(e) => setFeedbackComment(e.target.value)}
@@ -509,7 +509,7 @@ export const ChatMessage: FC<Props> = memo(
                       />
                       <div className="flex gap-2">
                         <button
-                          className="h-[40px] rounded-md border border-neutral-300 px-4 py-1 text-sm font-medium text-neutral-700 enabled:hover:bg-[#f97316] disabled:opacity-50"
+                          className="h-[40px] rounded-md border border-neutral-300 px-4 py-1 text-sm font-medium text-neutral-700 enabled:hover:bg-[#76b900] disabled:opacity-50"
                           onClick={handleSubmitFeedbackComment}
                           disabled={!feedbackComment.trim()}
                         >

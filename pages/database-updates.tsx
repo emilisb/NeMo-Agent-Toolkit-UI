@@ -234,7 +234,7 @@ const DataStreamHistory = () => {
       <div className={`min-h-screen ${lightMode === 'dark' ? 'dark' : ''}`}>
         <div className="bg-white dark:bg-gray-900 min-h-screen">
           {/* Header */}
-          <div className="bg-[#f97316] dark:bg-gray-800 shadow-sm">
+          <div className="bg-[#76b900] dark:bg-gray-800 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center space-x-3">
@@ -290,7 +290,7 @@ const DataStreamHistory = () => {
                   onChange={(e) =>
                     setSelectedStream(e.target.value ? e.target.value : null)
                   }
-                  className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#f97316] focus:border-transparent"
+                  className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#76b900] focus:border-transparent"
                 >
                   <option value="">All Streams</option>
                   {availableStreams.map((streamId: string) => (
@@ -308,7 +308,7 @@ const DataStreamHistory = () => {
                       e.target.value as 'all' | 'pending' | 'ingested',
                     )
                   }
-                  className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#f97316] focus:border-transparent"
+                  className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#76b900] focus:border-transparent"
                 >
                   <option value="all">Any Status</option>
                   <option value="pending">Pending</option>
@@ -332,7 +332,7 @@ const DataStreamHistory = () => {
             {/* Loading State */}
             {loading && entries.length === 0 && (
               <div className="flex justify-center items-center py-12">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#f97316]"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#76b900]"></div>
               </div>
             )}
 

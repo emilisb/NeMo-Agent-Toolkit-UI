@@ -21,20 +21,6 @@ export default function Document(props: Props) {
           content={APPLICATION_UI_NAME}
         ></meta>
         <script async src="/__ENV.js" />
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            try {
-              var s = localStorage.getItem('settings');
-              if (s) {
-                var parsed = JSON.parse(s);
-                if (parsed.theme === 'dark') {
-                  parsed.theme = 'light';
-                  localStorage.setItem('settings', JSON.stringify(parsed));
-                }
-              }
-            } catch(e) {}
-          })();
-        `}} />
       </Head>
       <body>
         <Main />

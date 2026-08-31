@@ -59,6 +59,8 @@ details.intermediate-step-details code {
   word-break: break-word;
 }
 
+/* Base44 theme — injected dynamically via ThemeContext when theme === 'base44' */
+
 /* add the code bellow */
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */

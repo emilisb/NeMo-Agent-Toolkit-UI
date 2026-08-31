@@ -122,12 +122,12 @@ export const CustomDetails = ({ children, id, messageIndex, index }) => {
         {children}
       </details>
       <span
-        className={`text-left font-medium focus:outline-none transition-colors duration-300 hover:text-[#f97316] text-[#f97316]`}
+        className={`text-left font-medium focus:outline-none transition-colors duration-300 hover:text-[#76b900] text-[#76b900]`}
       >
         {isLastMessage && messageIsStreaming && parsedIndex === -1 && (
           <div className="relative mt-1 mb-2">
             <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
-              <div className="h-full bg-[#f97316] animate-loadingBar"></div>
+              <div className="h-full bg-[#76b900] animate-loadingBar"></div>
             </div>
           </div>
         )}

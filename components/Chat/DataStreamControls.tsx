@@ -70,7 +70,7 @@ export const DataStreamControls = () => {
               });
             }}
             className={`relative inline-flex h-5 w-10 items-center cursor-pointer rounded-full transition-colors duration-300 ease-in-out ${showDataStreamDisplay
-                ? 'bg-black dark:bg-[#f97316]'
+                ? 'bg-black dark:bg-[#76b900]'
                 : 'bg-gray-200'
               }`}
           >
