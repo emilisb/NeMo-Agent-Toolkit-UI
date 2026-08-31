@@ -40,16 +40,29 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     const styleId = 'base44-theme-override';
     // Uses [class*=] to match Tailwind's JIT arbitrary value classes
     const base44Css = `
-      .base44 [class*="#202123"] { background-color: #7c2d12 !important; }
-      .base44 [class*="#343541"] { background-color: rgba(154,52,18,0.85) !important; }
-      .base44 [class*="#444654"] { background-color: #c2410c !important; }
-      .base44 [class*="#40414"] { background-color: #fed7aa !important; }
-      .base44 [class*="76b900"] { color: #f97316 !important; background-color: transparent; }
+      /* --- Sidebar panel --- */
+      .base44 .b44-sidebar { background-color: #1e1b4b !important; color: #e0e7ff !important; }
+      .base44 .b44-sidebar * { color: #e0e7ff; }
+      .base44 .b44-sidebar .text-white,
+      .base44 .b44-sidebar button,
+      .base44 .b44-sidebar a { color: #fff !important; }
+      .base44 .b44-sidebar input { background-color: #312e81 !important; color: #fff !important; border-color: rgba(255,255,255,0.15) !important; }
+      .base44 .b44-sidebar input::placeholder { color: rgba(255,255,255,0.5) !important; }
+      .base44 .b44-sidebar button:hover { background-color: rgba(99,102,241,0.25) !important; }
+
+      /* --- Sidebar conversation/folder items --- */
+      .base44 .b44-sidebar-item { background-color: rgba(99,102,241,0.2) !important; }
+      .base44 .b44-sidebar button.b44-sidebar-item:hover { background-color: rgba(99,102,241,0.35) !important; }
+
+      /* --- Brand accent: green → orange --- */
+      .base44 [class*="76b900"] { color: #f97316 !important; }
       .base44 [class*="bg-"][class*="76b900"] { background-color: #f97316 !important; color: #fff !important; }
       .base44 [class*="border-"][class*="76b900"] { border-color: #f97316 !important; }
-      .base44 [class*="004D3C"] { background-color: #c2440b !important; }
       .base44 [class*="91c438"] { background-color: #f97316 !important; }
-      .base44 [class*="bg-gray-50"] { background-color: #ffedd5 !important; }
+      .base44 [class*="004D3C"] { background-color: #4338ca !important; }
+
+      /* --- Mobile navbar --- */
+      .base44 nav[class*="202123"] { background-color: #1e1b4b !important; }
     `;
 
     let styleEl = document.getElementById(styleId) as HTMLStyleElement | null;

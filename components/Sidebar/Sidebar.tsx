@@ -65,7 +65,7 @@ const Sidebar = <T,>({
       ></div>
 
       <div
-        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[260px] flex-none flex-col space-y-2 bg-[#202123] p-2 text-[14px] transition-all`}
+        className={`b44-sidebar fixed top-0 ${side}-0 z-40 flex h-full w-[260px] flex-none flex-col space-y-2 bg-[#202123] p-2 text-[14px] transition-all`}
       >
         <div className="flex items-center">
           <button
