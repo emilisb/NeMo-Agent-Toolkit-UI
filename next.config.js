@@ -25,6 +25,9 @@ const nextConfig = {
       bodySizeLimit: process.env.NAT_MAX_FILE_SIZE_STRING || '5mb',
     },
   },
+  allowedDevOrigins: process.env.BASE44_PUBLIC_HOST_SUFFIX
+    ? ['3000-' + process.env.BASE44_PUBLIC_HOST_SUFFIX]
+    : [],
   async redirects() {
     return [];
   },
