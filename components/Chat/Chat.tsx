@@ -1788,7 +1788,7 @@ export const Chat = () => {
   }, [autoScrollEnabled, messageIsStreaming]);
 
   return (
-    <div className="relative flex-1 overflow-hidden bg-white dark:bg-[#343541] transition-all duration-300 ease-in-out">
+    <div className="relative flex-1 overflow-hidden bg-white dark:bg-[#9a3412] transition-all duration-300 ease-in-out">
       <>
         <div
           className="max-h-full overflow-x-hidden overflow-y-auto"
@@ -1811,7 +1811,7 @@ export const Chat = () => {
           })}
           {loading && <ChatLoader statusUpdateText={`Thinking...`} />}
           <div
-            className="h-[162px] bg-white dark:bg-[#343541]"
+            className="h-[162px] bg-white dark:bg-[#9a3412]"
             ref={messagesEndRef}
           ></div>
         </div>

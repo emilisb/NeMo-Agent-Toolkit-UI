@@ -101,7 +101,7 @@ export const MCPModal: FC<Props> = ({ open, onClose }) => {
         aria-modal="true"
         aria-labelledby="mcp-modal-title"
         tabIndex={-1}
-        className="w-full max-w-2xl bg-white dark:bg-[#202123] rounded-2xl shadow-lg p-6 transform transition-all relative max-h-[80vh] overflow-hidden flex flex-col outline-none"
+        className="w-full max-w-2xl bg-white dark:bg-[#7c2d12] rounded-2xl shadow-lg p-6 transform transition-all relative max-h-[80vh] overflow-hidden flex flex-col outline-none"
       >
         <div className="flex justify-between items-center mb-4">
           <h2

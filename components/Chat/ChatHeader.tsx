@@ -91,7 +91,7 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
       className={`top-0 z-10 flex justify-center items-center h-12 ${selectedConversation?.messages?.length === 0
           ? 'bg-none'
           : 'bg-[#f97316] sticky'
-        }  py-2 px-4 text-sm text-white dark:border-none dark:bg-black dark:text-neutral-200`}
+        }  py-2 px-4 text-sm text-white dark:border-none dark:bg-orange-950 dark:text-neutral-200`}
     >
       {selectedConversation?.messages?.length > 0 ? (
         <div
@@ -124,7 +124,7 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
         className={`fixed right-0 top-0 h-12 flex items-center transition-all duration-300 ${isExpanded ? 'mr-2' : 'mr-2'
           } ${selectedConversation?.messages?.length === 0
             ? 'bg-none'
-            : 'bg-[#f97316] dark:bg-black'
+            : 'bg-[#f97316] dark:bg-orange-950'
           }`}
       >
         <button

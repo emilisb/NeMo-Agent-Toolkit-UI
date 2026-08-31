@@ -259,8 +259,8 @@ export const ChatMessage: FC<Props> = memo(
     return (
       <div
         className={`group md:px-4 ${message.role === 'assistant'
-            ? 'border-b border-black/10 bg-gray-50 text-gray-800 dark:border-gray-900/50 dark:bg-[#444654] dark:text-gray-100'
-            : 'border-b border-black/10 bg-white text-gray-800 dark:border-gray-900/50 dark:bg-[#343541] dark:text-gray-100'
+            ? 'border-b border-black/10 bg-gray-50 text-gray-800 dark:border-gray-900/50 dark:bg-[#c2410c] dark:text-gray-100'
+            : 'border-b border-black/10 bg-white text-gray-800 dark:border-gray-900/50 dark:bg-[#9a3412] dark:text-gray-100'
           }`}
         style={{ overflowWrap: 'anywhere' }}
       >
@@ -280,7 +280,7 @@ export const ChatMessage: FC<Props> = memo(
                   <div className="flex w-full flex-col">
                     <textarea
                       ref={textareaRef}
-                      className="w-full resize-none whitespace-pre-wrap border-none dark:bg-[#343541]"
+                      className="w-full resize-none whitespace-pre-wrap border-none dark:bg-[#9a3412]"
                       value={messageContent}
                       onChange={handleInputChange}
                       onKeyDown={handlePressEnter}
@@ -501,7 +501,7 @@ export const ChatMessage: FC<Props> = memo(
                   {showFeedbackInput && message.observabilityTraceId && (
                     <div className="mt-2 flex flex-col gap-2">
                       <textarea
-                        className="w-full resize-none rounded-md border border-neutral-300 bg-white p-2 text-sm text-gray-800 dark:border-neutral-700 dark:bg-[#444654] dark:text-gray-100"
+                        className="w-full resize-none rounded-md border border-neutral-300 bg-white p-2 text-sm text-gray-800 dark:border-neutral-700 dark:bg-[#c2410c] dark:text-gray-100"
                         placeholder="Please tell us what you think about this response..."
                         value={feedbackComment}
                         onChange={(e) => setFeedbackComment(e.target.value)}

@@ -37,11 +37,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   }, []); // Empty deps: setLightModeState is stable from useState
 
   useEffect(() => {
-    // Initialize theme from settings
+    // Initialize theme from settings, defaulting to light
     const settings = getSettings();
-    if (settings.theme) {
-      setLightModeState(settings.theme);
-    }
+    const theme = settings.theme || 'light';
+    setLightModeState(theme);
 
     // Listen for theme changes in localStorage/sessionStorage
     const handleStorageChange = () => {

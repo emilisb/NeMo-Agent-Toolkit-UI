@@ -126,7 +126,7 @@ export const PromptSuggestions = ({
       {showPromptGuide && (
         <div
           data-testid="prompt-suggestions-menu"
-          className="prompt-guide-menu absolute bottom-12 w-max max-w-xl max-h-[500px] overflow-y-auto bg-white dark:bg-[#40414F] border border-neutral-200 dark:border-gray-700 rounded-lg shadow-lg z-50"
+          className="prompt-guide-menu absolute bottom-12 w-max max-w-xl max-h-[500px] overflow-y-auto bg-white dark:bg-[#fed7aa] border border-neutral-200 dark:border-gray-700 rounded-lg shadow-lg z-50"
         >
           <div className="p-4">
             <nav
