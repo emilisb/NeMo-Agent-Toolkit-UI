@@ -28,7 +28,7 @@ export const ChatbarSettings = () => {
   } = useContext(ChatbarContext);
 
   return (
-    <div className="flex flex-col items-center space-y-1 border-t border-white/20 pt-1 text-sm">
+    <div className="flex flex-col items-center space-y-1.5 border-t border-gray-200 px-3 pt-2 pb-3 text-sm">
       <SidebarButton
         text="MCP"
         icon={<IconPlug size={18} />}
@@ -66,6 +66,13 @@ export const ChatbarSettings = () => {
           setIsMCPModalOpen(false);
         }}
       />
+
+      {/* Avatar */}
+      <div className="mt-1 flex w-full items-center px-1">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#f97316] bg-white text-[14px] font-bold text-[#f97316]">
+          N
+        </div>
+      </div>
     </div>
   );
 };

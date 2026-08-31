@@ -59,17 +59,30 @@ const Sidebar = <T,>({
     <div>
       <div
         className={`fixed inset-0 z-40 transition-opacity duration-300 ${
-          isOpen ? 'bg-black opacity-70' : 'bg-transparent opacity-0'
+          isOpen ? 'bg-black/30' : 'bg-transparent opacity-0'
         } md:relative md:w-64`}
         onClick={toggleOpen}
       ></div>
 
       <div
-        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[260px] flex-none flex-col space-y-2 bg-[#202123] p-2 text-[14px] transition-all`}
+        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[260px] flex-none flex-col text-[14px] transition-all`}
+        style={{
+          background: 'rgba(248,249,250,0.92)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderRight: side === 'left' ? '4px solid #f97316' : 'none',
+          borderLeft: side === 'right' ? '4px solid #f97316' : 'none',
+        }}
       >
-        <div className="flex items-center">
+        {/* Header */}
+        <div className="px-4 pt-4 pb-2">
+          <span className="text-xl font-bold text-gray-900">NeMo Toolkit</span>
+        </div>
+
+        {/* New chat + folder buttons */}
+        <div className="flex items-center gap-2 px-3 pb-2">
           <button
-            className="text-sidebar flex w-[190px] flex-shrink-0 cursor-pointer select-none items-center gap-3 rounded-md border border-white/20 p-3 text-white transition-colors duration-200 hover:bg-gray-500/10"
+            className="flex flex-1 cursor-pointer select-none items-center justify-center gap-2 rounded-full bg-[#f97316] px-4 py-2.5 text-[14px] font-semibold text-white shadow-md transition-colors duration-200 hover:bg-[#ea580c]"
             onClick={() => {
               handleCreateItem();
               handleSearchTerm('');
@@ -80,21 +93,26 @@ const Sidebar = <T,>({
           </button>
 
           <button
-            className="ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 rounded-md border border-white/20 p-3 text-sm text-white transition-colors duration-200 hover:bg-gray-500/10"
+            className="flex flex-shrink-0 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white/70 p-2.5 text-gray-500 transition-colors duration-200 hover:bg-gray-100"
             onClick={handleCreateFolder}
           >
-            <IconFolderPlus size={16} />
+            <IconFolderPlus size={18} />
           </button>
         </div>
-        <Search
-          placeholder={t('Search...') || ''}
-          searchTerm={searchTerm}
-          onSearch={handleSearchTerm}
-        />
 
-        <div className="flex-grow overflow-auto">
+        {/* Search */}
+        <div className="px-3 pb-2">
+          <Search
+            placeholder={t('Search...') || ''}
+            searchTerm={searchTerm}
+            onSearch={handleSearchTerm}
+          />
+        </div>
+
+        {/* Conversation list */}
+        <div className="min-h-0 flex-grow overflow-auto px-2">
           {items?.length > 0 && (
-            <div className="flex border-b border-white/20 pb-2">
+            <div className="flex border-b border-gray-200 pb-2">
               {folderComponent}
             </div>
           )}
@@ -110,14 +128,15 @@ const Sidebar = <T,>({
               {itemComponent}
             </div>
           ) : (
-            <div className="mt-8 select-none text-center text-white opacity-50">
-              <IconMistOff className="mx-auto mb-3" />
+            <div className="mt-10 select-none text-center text-gray-400">
+              <IconMistOff className="mx-auto mb-3" size={32} />
               <span className="text-[14px] leading-normal">
                 {t('No data.')}
               </span>
             </div>
           )}
         </div>
+
         {footerComponent}
       </div>
 
