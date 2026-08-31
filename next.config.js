@@ -1,6 +1,9 @@
 const { configureRuntimeEnv } = require('next-runtime-env/build/configure');
 
 const nextConfig = {
+  allowedDevOrigins: process.env.BASE44_PUBLIC_HOST_SUFFIX
+    ? ['3000-' + process.env.BASE44_PUBLIC_HOST_SUFFIX]
+    : [],
   env: {
     ...configureRuntimeEnv(),
   },
