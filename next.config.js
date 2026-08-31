@@ -5,6 +5,9 @@ const nextConfig = {
     ...configureRuntimeEnv(),
   },
   output: 'standalone',
+  allowedDevOrigins: process.env.ALLOWED_DEV_ORIGINS
+    ? process.env.ALLOWED_DEV_ORIGINS.split(',')
+    : [],
   transpilePackages: ['react-syntax-highlighter'],
   typescript: {
     // !! WARN !!
