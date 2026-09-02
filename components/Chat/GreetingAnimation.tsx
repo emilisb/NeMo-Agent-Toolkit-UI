@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-const DELIBERATE_SYNTAX_ERROR = {{{;
 
 
 export const GreetingAnimation = () => {
