@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+
 export const GreetingAnimation = () => {
   const [burst, setBurst] = useState(false);
   const [ripples, setRipples] = useState<number[]>([]);
