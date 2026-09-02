@@ -28,7 +28,7 @@ export const ChatbarSettings = () => {
   } = useContext(ChatbarContext);
 
   return (
-    <div className="flex flex-col items-center space-y-1 border-t border-white/20 pt-1 text-sm">
+    <div className="flex flex-col items-center space-y-1 border-t border-orange-200 dark:border-white/20 pt-1 text-sm">
       <SidebarButton
         text="MCP"
         icon={<IconPlug size={18} />}
