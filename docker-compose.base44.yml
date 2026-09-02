@@ -1,0 +1,39 @@
+services:
+  app:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+      - PORT=3000
+      - NEXT_INTERNAL_URL=http://localhost:3099
+      - NAT_BACKEND_URL=http://localhost:8000
+      - NEXT_PUBLIC_NAT_WORKFLOW=NeMo Agent Toolkit
+      - NEXT_PUBLIC_NAT_GREETING_TITLE=Hi, I'm NeMo Agent Toolkit
+      - NEXT_PUBLIC_NAT_GREETING_SUBTITLE=How can I assist you today?
+      - NEXT_PUBLIC_NAT_INPUT_PLACEHOLDER=Unlock NeMo Agent Toolkit knowledge and expertise
+      - NEXT_PUBLIC_NAT_DISCLAIMER_MESSAGE=AI can make mistakes. Please verify the results before making decisions based on them.
+      - NEXT_PUBLIC_NAT_WELCOME_MESSAGE_ON=false
+      - NEXT_PUBLIC_NAT_PROMPT_SUGGESTIONS_ON=false
+      - NEXT_PUBLIC_NAT_WEB_SOCKET_DEFAULT_ON=false
+      - NEXT_PUBLIC_NAT_CHAT_HISTORY_DEFAULT_ON=false
+      - NEXT_PUBLIC_NAT_RIGHT_MENU_OPEN=false
+      - NEXT_PUBLIC_NAT_ENABLE_INTERMEDIATE_STEPS=true
+      - NEXT_PUBLIC_NAT_SHOW_DATA_STREAM_DEFAULT_ON=false
+      - NEXT_PUBLIC_NAT_ADDITIONAL_VIZ_DEFAULT_ON=false
+      - HTTP_PUBLIC_PATH=/api
+      - WS_PUBLIC_PATH=/ws
+      - HOSTNAME=0.0.0.0
+      - WATCHPACK_POLLING=true
+      - BASE44_PUBLIC_HOST_SUFFIX=${BASE44_PUBLIC_HOST_SUFFIX}
+    command: >
+      sh -c "npm ci && npm run dev"
+    restart: unless-stopped
+
+volumes:
+  node_modules:
