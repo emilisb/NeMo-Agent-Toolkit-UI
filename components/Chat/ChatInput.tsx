@@ -107,8 +107,8 @@ export const ChatInput = ({
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
-
     setContent(value);
+    window.dispatchEvent(new CustomEvent('chat-input-change', { detail: { value } }));
   };
 
   const handleSend = () => {
