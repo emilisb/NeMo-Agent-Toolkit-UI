@@ -1,0 +1,26 @@
+services:
+  app:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+      - PORT=3000
+      - NEXT_INTERNAL_URL=http://localhost:3099
+      - HTTP_PUBLIC_PATH=/api
+      - WS_PUBLIC_PATH=/ws
+      - NAT_BACKEND_URL=http://localhost:8000
+      - CORS_ORIGIN=*
+      - WATCHPACK_POLLING=true
+      - BASE44_PUBLIC_HOST_SUFFIX=${BASE44_PUBLIC_HOST_SUFFIX}
+    env_file:
+      - /run/base44/app.env
+    command: sh -c "npm ci && npx concurrently --kill-others --names 'PROXY,NEXT' -c 'bgGreen.bold,bgBlue.bold' 'node proxy/server.js' 'NEXT_TELEMETRY_DISABLED=1 npx next dev -p 3099 -H 0.0.0.0'"
+
+volumes:
+  node_modules:
