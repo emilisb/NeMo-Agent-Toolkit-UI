@@ -28,6 +28,15 @@ const nextConfig = {
       bodySizeLimit: process.env.NAT_MAX_FILE_SIZE_STRING || '5mb',
     },
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
+  },
   async redirects() {
     return [];
   },
