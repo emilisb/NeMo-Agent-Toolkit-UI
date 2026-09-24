@@ -1,0 +1,21 @@
+services:
+  web:
+    image: node:22
+    working_dir: /app
+    command: sh -c "npm ci --no-audit --no-fund && npm run dev"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    environment:
+      - BASE44_PUBLIC_HOST_SUFFIX
+      - WATCHPACK_POLLING=true
+      - CORS_ORIGIN=https://3000-${BASE44_PUBLIC_HOST_SUFFIX}
+    env_file:
+      - path: /run/base44/app.env # platform secrets (e.g. NAT_BACKEND_URL) — LAST, always wins
+        required: false
+    restart: unless-stopped
+
+volumes:
+  node_modules:
