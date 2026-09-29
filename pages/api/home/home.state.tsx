@@ -32,7 +32,6 @@ export interface HomeInitialState {
   additionalConfig: any;
   dataStreams: string[] /* Used for holding the associated label of live data streams (see `stream_id` in DATA_STREAMING.md) */;
   showDataStreamDisplay: boolean /* This toggle displays the data stream display in the chat interface (see DATA_STREAMING.md) */;
-  isUserTyping: boolean /* True while the user has text in the chat input, used to animate the greeting */;
 }
 
 export const initialState: HomeInitialState = {
@@ -84,5 +83,4 @@ export const initialState: HomeInitialState = {
     process?.env?.NEXT_PUBLIC_NAT_SHOW_DATA_STREAM_DEFAULT_ON === 'true'
       ? true
       : false,
-  isUserTyping: false,
 };

@@ -1,0 +1,43 @@
+.companion {
+  position: absolute;
+  bottom: calc(100% - 8px);
+  width: 170px;
+  height: 145px;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  transform: translateX(-50%);
+  transition: left 280ms cubic-bezier(.2, .8, .25, 1);
+}
+
+.cow { width: 100%; height: 100%; overflow: visible; }
+.body { transform-origin: 100px 155px; animation: breathe 4s ease-in-out infinite; }
+.head { transform-origin: 100px 124px; transform: rotate(var(--tilt)); transition: transform 250ms ease-out; }
+.eyes { transform-box: fill-box; transform-origin: center; animation: blink 5.8s infinite; }
+.pupils { transform: translateX(var(--gaze)); transition: transform 180ms ease-out; }
+.ear { transform-origin: 57px 77px; animation: earFlick 7s ease-in-out infinite; }
+.otherEar { transform-origin: 143px 77px; animation: earFlick 7s 2s ease-in-out infinite; }
+.tail { transform-origin: 142px 138px; animation: swish 3.5s ease-in-out infinite; }
+.fringe { transform-origin: 100px 45px; }
+
+.companion[data-moving='true'] .body { animation: trot 300ms ease-in-out infinite; }
+.companion[data-moving='true'] .leftHoof { animation: step 300ms ease-in-out infinite; }
+.companion[data-moving='true'] .rightHoof { animation: step 300ms 150ms ease-in-out infinite; }
+.companion[data-moving='true'] .fringe { animation: fluff 300ms ease-in-out infinite; }
+
+@keyframes breathe { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@keyframes blink { 0%, 42%, 46%, 100% { transform: scaleY(1); } 44% { transform: scaleY(.08); } }
+@keyframes earFlick { 0%, 86%, 100% { transform: rotate(0); } 90% { transform: rotate(-12deg); } 94% { transform: rotate(7deg); } }
+@keyframes swish { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(8deg); } }
+@keyframes trot { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-4px) rotate(1deg); } }
+@keyframes step { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes fluff { 0%, 100% { transform: rotate(-1deg); } 50% { transform: rotate(2deg); } }
+
+@media (max-width: 640px) {
+  .companion { width: 126px; height: 107px; bottom: calc(100% - 6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .companion, .companion * { animation: none !important; transition: none !important; }
+  .head { transform: none; }
+}

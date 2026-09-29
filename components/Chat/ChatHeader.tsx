@@ -44,7 +44,6 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
       webSocketConnected,
       selectedConversation,
       enableStreamingRagVizOptions,
-      isUserTyping,
     },
     dispatch: homeDispatch,
   } = useContext(HomeContext);
@@ -102,13 +101,7 @@ export const ChatHeader = ({ webSocketModeRef }: Props) => {
         </div>
       ) : (
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto flex flex-col space-y-5 md:space-y-10 px-3 pt-5 md:pt-12 sm:max-w-[600px] text-center">
-          <div
-            className={`text-3xl font-semibold transition-all duration-500 ease-out ${
-              isUserTyping
-                ? 'scale-110 -translate-y-1 bg-gradient-to-r from-[#76b900] via-emerald-400 to-[#76b900] bg-[length:200%_auto] bg-clip-text text-transparent animate-greeting-shimmer'
-                : 'scale-100 translate-y-0 text-gray-800 dark:text-white'
-            }`}
-          >
+          <div className="text-3xl font-semibold text-gray-800 dark:text-white">
             {env('NEXT_PUBLIC_NAT_GREETING_TITLE') ||
               process?.env?.NEXT_PUBLIC_NAT_GREETING_TITLE ||
               `Hi, I'm ${workflow}`}
