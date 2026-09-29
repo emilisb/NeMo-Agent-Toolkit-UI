@@ -89,6 +89,10 @@ module.exports = {
           '50%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(100%)' },
         },
+        greetingShimmer: {
+          '0%': { backgroundPosition: '0% center' },
+          '100%': { backgroundPosition: '200% center' },
+        },
       },
       animation: {
         blink: 'blink 1s step-start infinite',
@@ -99,6 +103,7 @@ module.exports = {
         crack: 'crack 0.6s ease-in-out forwards',
         darken: 'darken 1s forwards',
         loadingBar: 'loadingBar 2s ease-in-out infinite',
+        'greeting-shimmer': 'greetingShimmer 1.8s linear infinite',
       },
     },
   },

@@ -57,6 +57,7 @@ export const ChatInput = ({
 
   const {
     state: { selectedConversation, messageIsStreaming },
+    dispatch: homeDispatch,
   } = useContext(HomeContext);
 
   const workflow = getWorkflowName();
@@ -109,6 +110,7 @@ export const ChatInput = ({
     const value = e.target.value;
 
     setContent(value);
+    homeDispatch({ field: 'isUserTyping', value: value.trim().length > 0 });
   };
 
   const handleSend = () => {
@@ -139,6 +141,7 @@ export const ChatInput = ({
         ],
       });
       setContent('');
+      homeDispatch({ field: 'isUserTyping', value: false });
       setInputFile(null);
       setInputFileExtension('');
       setInputFileContent('');
@@ -146,6 +149,7 @@ export const ChatInput = ({
     } else {
       onSend({ role: 'user', content });
       setContent('');
+      homeDispatch({ field: 'isUserTyping', value: false });
       setInputFile(null);
       setInputFileExtension('');
       setInputFileContent('');
