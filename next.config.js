@@ -6,6 +6,16 @@ const nextConfig = {
   },
   output: 'standalone',
   transpilePackages: ['react-syntax-highlighter'],
+  // Sandbox preview only: accept the preview proxy origin in the dev server.
+  ...(process.env.BASE44_PREVIEW_MODE === '1' &&
+  process.env.BASE44_PUBLIC_HOST_SUFFIX
+    ? {
+        allowedDevOrigins: [
+          '3000-' + process.env.BASE44_PUBLIC_HOST_SUFFIX,
+          '*.' + (process.env.BASE44_SANDBOX_HOST_DOMAIN || 'localhost'),
+        ],
+      }
+    : {}),
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
