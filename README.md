@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![NeMo Agent Toolkit](https://img.shields.io/badge/NeMo%20Agent%20Toolkit-Frontend-green)](https://github.com/NVIDIA/NeMo-Agent-Toolkit)
 
-This is the official frontend user interface component for [NeMo Agent Toolkit](https://github.com/NVIDIA/NeMo-Agent-Toolkit), an open-source library for building AI agents and workflows.
+This is the official frontend user interface component for [NeMo Agent Toolkit](https://github.com/NVIDIA/NeMo-Agent-Toolkit), an open-source library for building AI agents and workflows. It is a Next.js app that talks to a running NeMo Agent Toolkit backend.
 
 This project builds upon the work of:
 
