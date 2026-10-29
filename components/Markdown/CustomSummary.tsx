@@ -39,9 +39,9 @@ export const CustomSummary = ({ children, id }) => {
         cursor-pointer 
         font-normal 
         text-gray-600 
-        hover:text-[#76b900] 
+        hover:text-[#e11d2e] 
         dark:text-neutral-300 
-        dark:hover:text-[#76b900]
+        dark:hover:text-[#e11d2e]
         list-none 
         flex items-center justify-between 
         p-0 rounded
@@ -53,9 +53,9 @@ export const CustomSummary = ({ children, id }) => {
     >
       <div className="flex items-center flex-1 gap-2">
         {children?.toString().toLowerCase()?.includes('tool') ? (
-          <IconTool size={16} className="text-[#76b900]" />
+          <IconTool size={16} className="text-[#e11d2e]" />
         ) : (
-          <IconCpu size={16} className="text-[#76b900]" />
+          <IconCpu size={16} className="text-[#e11d2e]" />
         )}
         <span>{children}</span>
       </div>
@@ -63,8 +63,8 @@ export const CustomSummary = ({ children, id }) => {
       {/* Right-side icons */}
       <div className="flex items-center gap-1">
         {isLoading ? (
-          <IconLoader size={16} className="animate-spin text-[#76b900]" />
-        ) : // <IconCheck size={16} className="text-[#76b900]" />
+          <IconLoader size={16} className="animate-spin text-[#e11d2e]" />
+        ) : // <IconCheck size={16} className="text-[#e11d2e]" />
           null}
         {shouldOpen() ? (
           <IconChevronUp

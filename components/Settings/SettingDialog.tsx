@@ -455,7 +455,7 @@ export const SettingDialog: FC<Props> = ({ open, onClose }) => {
             {t('Cancel')}
           </button>
           <button
-            className="px-4 py-2 bg-[#76b900] text-white rounded-md hover:bg-[#5a9100] focus:outline-none"
+            className="px-4 py-2 bg-[#e11d2e] text-white rounded-md hover:bg-[#b31220] focus:outline-none"
             onClick={handleSave}
           >
             {t('Save')}
