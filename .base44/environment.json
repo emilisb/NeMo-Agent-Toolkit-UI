@@ -1,0 +1,12 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "NAT_BACKEND_URL",
+      "description": "NeMo Agent Toolkit backend URL (e.g. http://your-backend:8000). Required for chat functionality but the UI loads without it.",
+      "requiredAtBoot": false
+    }
+  ]
+}
