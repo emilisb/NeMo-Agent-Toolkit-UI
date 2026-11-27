@@ -89,6 +89,16 @@ module.exports = {
           '50%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(100%)' },
         },
+        typingGlow: {
+          '0%, 100%': {
+            boxShadow:
+              '0 0 0 1px rgba(118, 185, 0, 0.35), 0 0 10px rgba(118, 185, 0, 0.18)',
+          },
+          '50%': {
+            boxShadow:
+              '0 0 0 2px rgba(118, 185, 0, 0.55), 0 0 20px rgba(118, 185, 0, 0.32)',
+          },
+        },
       },
       animation: {
         blink: 'blink 1s step-start infinite',
@@ -99,6 +109,7 @@ module.exports = {
         crack: 'crack 0.6s ease-in-out forwards',
         darken: 'darken 1s forwards',
         loadingBar: 'loadingBar 2s ease-in-out infinite',
+        'typing-glow': 'typingGlow 1.8s ease-in-out infinite',
       },
     },
   },

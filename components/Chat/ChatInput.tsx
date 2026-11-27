@@ -386,7 +386,13 @@ export const ChatInput = ({
             </button>
           )}
 
-        <div className="relative mx-2 flex w-full flex-grow flex-col rounded-md border border-black/10 bg-white shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:border-gray-900/50 dark:bg-[#40414F] dark:text-white dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] sm:mx-4">
+        <div
+          className={`relative mx-2 flex w-full flex-grow flex-col rounded-md border bg-white dark:bg-[#40414F] dark:text-white sm:mx-4 transition-colors duration-300 ${
+            content.trim()
+              ? 'animate-typing-glow border-[#76b900]/60 dark:border-[#76b900]/60 motion-reduce:animate-none'
+              : 'border-black/10 shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:border-gray-900/50 dark:shadow-[0_0_15px_rgba(0,0,0,0.10)]'
+          }`}
+        >
           <textarea
             ref={textareaRef}
             className={`m-0 w-full resize-none border-0 sm:p-3 sm:pl-8 bg-transparent p-0 py-2 pr-8 ${
